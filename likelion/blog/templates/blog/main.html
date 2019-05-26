@@ -1,0 +1,15 @@
+<head>
+    <title>MAIN</title>
+</head>
+
+<body>
+    <h1>MAIN</h1>
+    {% if user.is_active %}
+    <p>{{ user.username }}님 반갑습니다.</p>
+    <p><a href="{% url 'logout' %}">로그아웃</a></p>
+    {% else %}
+    <p>로그인하지 않으셨습니다.</p>
+    <a href="{% url 'login' %}">로그인</a>
+    <a href="{% url 'accounts:signup' %}">회원가입</a>
+    {% endif %}
+</body>
